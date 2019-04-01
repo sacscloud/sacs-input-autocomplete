@@ -11,12 +11,12 @@
     Polymer({
       is:'sacs-input-autocomplete',
       properties:{
-          api:{
-              type:String,
+          data:{
+              type:Array,
               value:null
           },
 
-          itemresult:{
+          result:{
               type:Object,
               value:{}
           }

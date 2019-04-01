@@ -1,6 +1,10 @@
 # \<sacs-input-autocomplete\>
 
-LEERÁ DE UN API LOS ITEMS Y LOS LISTARA
+Leera los datos que se le proporcionen y filtrara de acuerdo a la busqueda del usuario. Mostrara la opcion para autocompletar al momento que se esta escribiendo una busqueda y regresara en una propiedad los resultados para que puedan ser utilizados.
+
+## Example
+
+![Texto alternativo](autocomplete.gif)
 
 ## Install the Polymer-CLI
 
@@ -50,8 +54,8 @@ Your application is already set up to be tested via [web-component-tester](https
 
 Name | Type | Description | Default
 -----|-------------|---------|--------
-`api` | `String` | Path de la api donde se traeran los datos de firebase | `null`
-`itemresult` | `Object` | Respuesta del filtrado con item seleccionado  | `{}`
+`data` | `Array` | Datos que recibe el componente para poder filtrar y mostrar | `[]`
+`result` | `Object` | Respuesta del filtrado con item seleccionado  | `{}`
 
 
 ## Methods
@@ -71,7 +75,7 @@ Este componente no usa dependencias de otros componentes
 
 ## Use
 
-Se necesita pasar el `api` para que pueda traer los datos y filtrarlos.
+Se necesita enviarle un set de datos en la propertie `data` para trabajar con ellos
 
 ```
 <sacs-input-autocomplete api="elestic"></sacs-input-autocomplete>
