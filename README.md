@@ -52,6 +52,8 @@ Your application is already set up to be tested via [web-component-tester](https
 
 ## Properties
 
+Las propiedades descritas solo son la base pero se deben agregar todas las que sean necesarias.
+
 Name | Type | Description | Default
 -----|-------------|---------|--------
 `data` | `Array` | Datos que recibe el componente para poder filtrar y mostrar | `[]`
@@ -59,6 +61,8 @@ Name | Type | Description | Default
 
 
 ## Methods
+
+Las metodos descritos solo son la base pero se deben agregar todos las que sean necesarios.
 
 Method | Description | Parameters | Return
 -----|-------------|---------|------------
@@ -78,7 +82,49 @@ Este componente no usa dependencias de otros componentes
 Se necesita enviarle un set de datos en la propertie `data` para trabajar con ellos
 
 ```
-<sacs-input-autocomplete api="elestic"></sacs-input-autocomplete>
+<sacs-input-autocomplete data='[{
+            "label": "inventorycount", "id":"created"}' 
+            data='[{
+            "$key": "-L_Q-yOVCgn4DuKtoymp",
+            "count": "ad",
+            "created": 1552010176169,
+            "inventorycount": "producto",
+            "modified": 1552010176169,
+            "outlet": "adasd",
+            "startdate": "asda",
+            "starttime": "adad",
+            "status": "asdasd",
+            "uid": "sYAz35uEWzgDIX19BneSCdWGoyj2",
+            "manualCount":"manual count"
+            },
+            
+            {
+            "$key": "-L_Q0rKOQRAoWx2aC3UO",
+            "count": "asdasd",
+            "created": 1552010409385,
+            "inventorycount": "viejo producto",
+            "modified": 1552010409385,
+            "outlet": "asdasd",
+            "startdate": "asdads",
+            "starttime": "asdasd",
+            "status": "asdasd",
+            "uid": "sYAz35uEWzgDIX19BneSCdWGoyj2",
+            "manualCount":"manual count 2"
+            },
+            {
+              "$key": "-L_Q0rKOQRAoWx2aC3UO",
+              "count": "otro count",
+              "created": 1552010409385,
+              "inventorycount": "ultimo producto",
+              "modified": 8422010407352,
+              "outlet": "asdasd",
+              "startdate": "asdads",
+              "starttime": "asdasd",
+              "status": "asdasd",
+              "uid": "sYAz35uEWzgDIX19BneSCdWGoyj2",
+              "manualCount":"manual count 3"
+              }
+            ]'></sacs-input-autocomplete>
 ```
 
 ## Behaviour
