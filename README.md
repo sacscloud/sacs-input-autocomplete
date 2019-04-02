@@ -124,7 +124,7 @@ Se necesita enviarle un set de datos en la propertie `data` para trabajar con el
               "uid": "sYAz35uEWzgDIX19BneSCdWGoyj2",
               "manualCount":"manual count 3"
               }
-            ]'></sacs-input-autocomplete>
+            ]' result="{{result}}"></sacs-input-autocomplete>
 ```
 
 ## Behaviour
