@@ -3,11 +3,64 @@
         <style>
             :host {
                 display: block;
+                box-sizing: border-box;
+                font-size: 14px;
+                --sacs-input-autocomplete-btn-background:rgb(100, 200, 100);
+                --sacs-input-autocomplete-btn-color:whitesmoke;
             }
 
-            h2 {
-                color: red
-            }
+           .container{
+               padding: 10px;
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               justify-content: center;
+           }
+
+           .input_filter{
+               height: 2.5rem;
+               width: 20rem;
+               margin: 0 1.5rem;
+           }
+
+           .counter{
+               margin: 1rem;
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               justify-content: center;
+               box-sizing: border-box;
+           }
+
+
+           .btn_count{
+               min-width: 48px;
+               min-height: 48px;
+               width: 10rem;
+               height: 4rem;
+               margin:1rem;
+               color: var(--sacs-input-autocomplete-btn-color,white);
+               background-color: var(--sacs-input-autocomplete-btn-background, gray);
+               font-weight: bold;
+               
+           }
+
+           .btn_count[disabled]{
+              background: rgb(230, 230, 230);
+              color:rgb(210, 210, 210);
+              opacity: .5;
+              
+           }
+
+           .input_counter{
+               height: 3rem;
+               width: 3rem;
+           }
+
+           .list_items{
+             position: relative;
+             z-index: 100;
+           }
         </style>
     </template>
 </dom-module>

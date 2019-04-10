@@ -1,10 +1,29 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="./sacs-input-autocomplete-styles.html">
 
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../sacs-list-dropdown/sacs-list-dropdown.html">
+
 <dom-module id="sacs-input-autocomplete">
   <template>
     <style include="sacs-input-autocomplete-styles"></style>
-    <input type="text" on-input="_filterItem">
+
+    <section class="container">
+        <input type="text" class="input_filter" id="input_filter" on-input="_listenerInputFilter">
+
+        <div class="counter" id="counter">
+            <input id="input_counter" type="number" class="input_counter" min="1">
+            <paper-button id="btn_count" class="btn_count" disabled>Count</paper-button>
+        </div>
+    
+       <paper-checkbox id="check-scan"></paper-checkbox>
+        <label for="check-scan">Scann mode</label>
+
+    </section>
+
+    <sacs-list-dropdown id="list_items" class="list_items" data-list="[[data]]"></sacs-list-dropdown>
+
   </template>
 
   <script src="./sacs-input-autocomplete.js"></script>
