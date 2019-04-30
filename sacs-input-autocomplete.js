@@ -13,7 +13,12 @@
       properties:{
           data:{
               type:Array,
-              value:null
+              value:[]
+          },
+
+          dataFilter:{
+              type:Array,
+              value:[]
           },
 
           dataAux:{
@@ -24,6 +29,16 @@
           result:{
               type:Object,
               value:[]
+          },
+
+          name:{
+              type:String,
+              value:null
+          },
+
+          key:{
+              type:String,
+              value:null
           }
       },
 
@@ -84,12 +99,42 @@
           }
       },
 
+      attached: function(){
+        
+        this.__createObject();
+
+      
+         //console.log("DATA", ...this.data);
+      },
+
+      __createObject : function (obj){
+           //console.log("OBJ", obj);
+           
+
+           this.data.map( obj => {
+            const dataList = new Object();
+            for (let key in obj){
+                if(key === this.name){
+                  dataList.name = obj[key];
+                }
+                
+                if(key === this.key){
+                    dataList.id = obj[key];
+
+                }
+              
+            }
+      
+            this.push('dataFilter', dataList);
+        });
+      },
+
       _filterList: function (value) {
 
-        const dataFiltered = this.data.filter( element => 
-                             element.name.search(value) !== -1 || 
-                             element.id.search(value) !== -1
-                           );
+        const dataFiltered = this.dataFilter
+                            .filter( element => 
+                             element.name.toLowerCase().search(value.toLowerCase()) !== -1 || 
+                             element.id.toLowerCase().search(value.toLowerCase()) !== -1);
 
         this.$$("#list_items").dataList = dataFiltered;
 
