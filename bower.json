@@ -1,6 +1,6 @@
 {
   "name": "sacs-input-autocomplete",
-  "version:": "1.0.2",
+  "version:": "1.0.3",
   "description": "autocomplete the search",
   "main": "sacs-input-autocomplete.html",
   "authors": [

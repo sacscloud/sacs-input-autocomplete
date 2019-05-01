@@ -48,6 +48,18 @@
        "item-selected":"__listenerItemSelected"
       },
 
+      observers:[
+        'handleData(data.*)'
+    ],
+
+    handleData: function(data){
+
+        if(data.value.length > 0){
+            this.__createObject();
+        }
+    
+    },
+
       __listenerCheck: function (e) {
 
           if(e.target.checked) {
@@ -75,8 +87,7 @@
       },
 
       __listenerItemSelected: function (e) {
-              console.log("EVENT", e)
-
+    
               this.$.input_filter.value = e.detail.name;
               this.$.input_counter.value = 1;
               this.$$("#list_items")._closeList(); 
@@ -98,15 +109,6 @@
             this.$$("#list_items").dataList = this.data;
           }
       },
-
-      attached: function(){
-        
-        this.__createObject();
-
-      
-         //console.log("DATA", ...this.data);
-      },
-
       __createObject : function (obj){
            //console.log("OBJ", obj);
            
@@ -132,9 +134,18 @@
       _filterList: function (value) {
 
         const dataFiltered = this.dataFilter
-                            .filter( element => 
-                             element.name.toLowerCase().search(value.toLowerCase()) !== -1 || 
-                             element.id.toLowerCase().search(value.toLowerCase()) !== -1);
+                            .filter( element => {
+                                   
+                               if(typeof element.id === 'number'){
+                                   element.id = element.id.toString();
+
+                               }
+
+                                return element.name.toLowerCase().search(value.toLowerCase()) !== -1 || 
+                                element.id.toLowerCase().search(value.toLowerCase()) !== -1
+
+                            }
+                             );
 
         this.$$("#list_items").dataList = dataFiltered;
 
