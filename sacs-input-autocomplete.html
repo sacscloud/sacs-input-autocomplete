@@ -10,6 +10,7 @@
     <style include="sacs-input-autocomplete-styles"></style>
 
     <section class="container">
+        <sacs-list-dropdown id="list_items" class="list_items" data-list="[[dataFilter]]"></sacs-list-dropdown>
         <input type="text" class="input_filter" id="input_filter" on-input="_listenerInputFilter">
 
         <div class="counter" id="counter">
@@ -20,9 +21,10 @@
        <paper-checkbox id="check-scan"></paper-checkbox>
         <label for="check-scan">Scann mode</label>
 
+        
+
     </section>
 
-    <sacs-list-dropdown id="list_items" class="list_items" data-list="[[dataFilter]]"></sacs-list-dropdown>
 
   </template>
 
